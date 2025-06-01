@@ -3,8 +3,11 @@ import React from 'react';
 import { Map, Heart, Users, Star, Plus, ArrowRight, Globe, Camera, Compass } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
@@ -26,7 +29,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button
                 size="lg"
-                onClick={() => window.location.href = '/create'}
+                onClick={() => navigate('/create')}
                 className="bg-white text-emerald-600 hover:bg-gray-50 px-8 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 <Plus className="w-5 h-5 mr-2" />
@@ -35,7 +38,7 @@ const Index = () => {
               <Button
                 variant="outline"
                 size="lg"
-                onClick={() => window.location.href = '/popular'}
+                onClick={() => navigate('/popular')}
                 className="border-2 border-white text-white hover:bg-white hover:text-emerald-600 px-8 py-4 text-lg font-semibold rounded-full transition-all duration-300 hover:scale-105"
               >
                 Исследовать
@@ -138,7 +141,7 @@ const Index = () => {
           </p>
           <Button
             size="lg"
-            onClick={() => window.location.href = '/create'}
+            onClick={() => navigate('/create')}
             className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white px-12 py-4 text-lg font-semibold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
             <Star className="w-5 h-5 mr-2" />
