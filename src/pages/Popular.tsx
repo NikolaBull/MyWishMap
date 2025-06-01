@@ -4,9 +4,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Map from '@/components/Map';
+import { useNavigate } from 'react-router-dom';
 
 const Popular = () => {
   const [selectedPlace, setSelectedPlace] = useState<any>(null);
+  const navigate = useNavigate();
 
   const popularPlaces = [
     {
@@ -205,7 +207,7 @@ const Popular = () => {
                 Создайте собственную карту желаний и вдохновите других!
               </p>
               <button 
-                onClick={() => window.location.href = '/create'}
+                onClick={() => navigate('/create')}
                 className="bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white px-6 py-2 rounded-lg font-medium transition-all duration-300 hover:scale-105"
               >
                 Создать желание
