@@ -4,6 +4,7 @@ import { Heart, MapPin, Trash2, Calendar } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { toast } from '@/hooks/use-toast';
+import { useNavigate } from 'react-router-dom';
 
 interface Wish {
   id: string;
@@ -19,6 +20,7 @@ interface Wish {
 
 const Dashboard = () => {
   const [wishes, setWishes] = useState<Wish[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const storedWishes = JSON.parse(localStorage.getItem('wishes') || '[]');
@@ -67,7 +69,7 @@ const Dashboard = () => {
                 Создайте свое первое желание на карте
               </p>
               <Button 
-                onClick={() => window.location.href = '/create'}
+                onClick={() => navigate('/create')}
                 className="bg-gradient-to-r from-emerald-500 to-blue-500 hover:from-emerald-600 hover:to-blue-600 text-white"
               >
                 Создать желание
